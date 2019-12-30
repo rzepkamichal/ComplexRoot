@@ -1,17 +1,17 @@
-// ComplexRootLibC.cpp : Defines the exported functions for the DLL application.
-//
-
 #include "stdafx.h"
-#include "ComplexRootLibC.h"
+#include "ComplexRootLibCpp.h"
 
 #include <cmath>
+#include <iostream>
+#include <iomanip>
 
-#define PI (4 * atan(1))
+#define PI 3.14159265358979323846
 
-COMPLEXROOTLIBC_API double * calculateRoots(double modulus, double arc, int n)
-{
-	const int RESULTS_ARRAY_SIZE = n;
-	double* results = new double[RESULTS_ARRAY_SIZE];
+COMPLEXROOTLIBCPP_API double* calculateRoots(double modulus, double arc, int n) {
+	
+	const int resultsCount = 2 * n;
+	double* results = new double[resultsCount];
+	double pi = 3.14159265358979323846;
 
 	//calculate the n-th root of the modulus
 	const double modulusRoot = pow(modulus, 1.0 / n);
@@ -21,19 +21,18 @@ COMPLEXROOTLIBC_API double * calculateRoots(double modulus, double arc, int n)
 
 	//argument passed to the trygonometric functions
 	double trygArgument;
+	
+	for (int i = 0; i < resultsCount - 1; i += 2) {
 
-	for (int i = 0; i < RESULTS_ARRAY_SIZE; i += 2) {
-		
-		trygArgument = (arc + 2 * k * PI) / n;
-		
+		trygArgument = (arc + 2 * k * pi) / n;
+
 		//calculate the real part of the k-th result
 		results[i] = modulusRoot * cos(trygArgument);
 
 		//calculate the imaginary part of the k-th result
 		results[i + 1] = modulusRoot * sin(trygArgument);
-		
 		k++;
 	}
-	
+
 	return results;
 }
