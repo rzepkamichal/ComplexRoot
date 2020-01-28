@@ -11,7 +11,10 @@ namespace ComplexRoot
     {
 
         [DllImport("ComplexRootLibCpp.dll", CallingConvention = CallingConvention.Cdecl)]
-        static extern IntPtr calculateRoots(double modulus, double arc, int n);
+        static extern void calculateRoots(double modulus, double arc, int n, double[] results);
+
+        [DllImport("ComplexRootLibAsm.dll", CallingConvention = CallingConvention.Cdecl)]
+        static extern int zwrocNumber();
 
         /// <summary>
         /// The main entry point for the application.
@@ -19,18 +22,20 @@ namespace ComplexRoot
         [STAThread]
         static void Main()
         {
-            double modulus = 1;
-            double arc = 0;
-            int n = 4;
             
-            IntPtr libResult = calculateRoots(modulus, arc, n);
+            double modulus = 13;
+            double arc = 23;
+            int n = 2;
+            
             double[] results = new double[2 * n];
-            Marshal.Copy(libResult, results, 0, 2 * n);
+            calculateRoots(modulus, arc, n, results);
+           
 
             for(int i = 0; i < 2 * n; i++)
                 Console.WriteLine(String.Format("{0:0.###############}", results[i]));
-            
 
+
+            //Console.WriteLine("ZWROC NUMBER: " + zwrocNumber());
             //Application.EnableVisualStyles();
             //Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());

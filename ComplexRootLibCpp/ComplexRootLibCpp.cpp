@@ -7,10 +7,9 @@
 
 #define PI 3.14159265358979323846
 
-COMPLEXROOTLIBCPP_API double* calculateRoots(double modulus, double arc, int n) {
+COMPLEXROOTLIBCPP_API void calculateRoots(double modulus, double arc, int n, double* results) {
 	
 	const int resultsCount = 2 * n;
-	double* results = new double[resultsCount];
 	double pi = 3.14159265358979323846;
 
 	//calculate the n-th root of the modulus
@@ -34,5 +33,4 @@ COMPLEXROOTLIBCPP_API double* calculateRoots(double modulus, double arc, int n) 
 		k++;
 	}
 
-	return results;
 }

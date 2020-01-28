@@ -6,4 +6,4 @@
 #define COMPLEXROOTLIBCPP_API __declspec(dllimport)
 #endif
 
-extern "C" COMPLEXROOTLIBCPP_API double* calculateRoots(double modulus, double arc, int n);
+extern "C" COMPLEXROOTLIBCPP_API void calculateRoots(double modulus, double arc, int n, double* results);
