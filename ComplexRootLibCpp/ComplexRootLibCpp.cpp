@@ -7,7 +7,7 @@
 
 #define PI 3.14159265358979323846
 
-COMPLEXROOTLIBCPP_API void calculateRoots(double modulus, double arc, int n, double* results) {
+COMPLEXROOTLIBCPP_API void calculateRootsCpp(double modulus, double arc, int n, double* results) {
 	
 	const int resultsCount = 2 * n;
 	double pi = 3.14159265358979323846;
