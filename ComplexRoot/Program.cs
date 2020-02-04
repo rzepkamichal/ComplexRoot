@@ -20,16 +20,19 @@ namespace ComplexRoot
             List<ComplexNumAlgebraic> numbers;
 
 
-            string jsonString;
-            jsonString = File.ReadAllText("output.json");
+            string inputJson;
+            inputJson = File.ReadAllText("input.json");
 
-            numbers = JsonConvert.DeserializeObject<List<ComplexNumAlgebraic>>(jsonString);
+            List<ComplexNumAlgebraic> algebraicInputs = JsonConvert.DeserializeObject<List<ComplexNumAlgebraic>>(inputJson);
+            List<ComplexNumTrygonometric> trygInputs = new List<ComplexNumTrygonometric>();
 
-            List<ComplexRootResultPresentation> results = ComplexNumUtils.calculateRoots(null);
+            algebraicInputs.ForEach(input => trygInputs.Add(ComplexNumUtils.toTrygonometric(input)));
+            ResultsPresentation resultsPresentation = ComplexNumUtils.calculateRoots(trygInputs, 2);
 
-            string resultsJson = JsonConvert.SerializeObject(results, Formatting.Indented);
-            File.WriteAllText("results.json", resultsJson);
+            //string resultsJson = JsonConvert.SerializeObject(resultsPresentation, Formatting.Indented);
+            //File.WriteAllText("output.json", resultsJson);
 
+            Console.WriteLine(resultsPresentation.calculationDurationMS);
         }
     }
 }

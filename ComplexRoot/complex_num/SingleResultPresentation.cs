@@ -6,9 +6,14 @@ using System.Threading.Tasks;
 
 namespace ComplexRoot.complex_num
 {
-    class ComplexRootResultPresentation
+    class SingleResultPresentation
     {
         public ComplexNumAlgebraic input { get; set; }
         public List<ComplexRootResult> results { get; set; }
+
+        public SingleResultPresentation()
+        {
+            this.results = new List<ComplexRootResult>();
+        }
     }
 }

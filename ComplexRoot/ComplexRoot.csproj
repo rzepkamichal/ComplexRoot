@@ -51,11 +51,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="complex_num\CalculationJob.cs" />
     <Compile Include="complex_num\ComplexNumAlgebraic.cs" />
     <Compile Include="complex_num\ComplexNumTrygonometric.cs" />
     <Compile Include="complex_num\ComplexNumUtils.cs" />
     <Compile Include="complex_num\ComplexRootResult.cs" />
-    <Compile Include="complex_num\ComplexRootResultPresentation.cs" />
+    <Compile Include="complex_num\SingleResultPresentation.cs" />
+    <Compile Include="complex_num\ResultsPresentation.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

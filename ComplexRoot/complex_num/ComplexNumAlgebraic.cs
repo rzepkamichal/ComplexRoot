@@ -28,7 +28,11 @@ namespace ComplexRoot.complex_num
         /// </summary>
         public int root { get; set; }
 
-
-
+        public ComplexNumAlgebraic(double re, double im, int root)
+        {
+            this.re = re;
+            this.im = im;
+            this.root = root;
+        }
     }
 }
