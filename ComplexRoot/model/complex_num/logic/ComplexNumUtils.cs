@@ -9,6 +9,13 @@ using System.Threading.Tasks;
 
 namespace ComplexRoot.complex_num
 {
+
+    public enum LibraryType
+    {
+        ASM,
+        CPP
+    }
+
     class ComplexNumUtils
     {
 
@@ -49,7 +56,7 @@ namespace ComplexRoot.complex_num
         }
 
 
-        public static ResultsPresentation calculateRoots(List<ComplexAlgebraic> inputs, int threadCount)
+        public static ResultsPresentation calculateRoots(List<ComplexAlgebraic> inputs, int threadCount, LibraryType lib)
         {
             if (threadCount < 1 || threadCount > 64)
                 threadCount = 1;
@@ -90,7 +97,11 @@ namespace ComplexRoot.complex_num
                             fixed (double* resultsPtr = &results[0])
                             {
                                 ComplexTrigonometric inputTrig = toTrygonometric(i);
-                                calculateRootsAsm(inputTrig.modulus, inputTrig.arc, inputTrig.root, resultsPtr);
+
+                                if(LibraryType.ASM.Equals(lib))
+                                    calculateRootsAsm(inputTrig.modulus, inputTrig.arc, inputTrig.root, resultsPtr);
+                                else
+                                    calculateRootsCpp(inputTrig.modulus, inputTrig.arc, inputTrig.root, resultsPtr);
                                 resultPresentation.input = i;
                                 for (int j = 0; j < i.root * 2 - 1; j += 2)
                                     resultPresentation.results.Add(new ComplexRootResult(resultsPtr[j], resultsPtr[j + 1]));

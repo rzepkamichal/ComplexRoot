@@ -9,3 +9,14 @@ C:\Users\M_User\Desktop\dev\ComplexRoot\ComplexRoot\obj\Debug\ComplexRoot.csproj
 C:\Users\M_User\Desktop\dev\ComplexRoot\ComplexRoot\obj\Debug\ComplexRoot.csproj.CopyComplete
 C:\Users\M_User\Desktop\dev\ComplexRoot\ComplexRoot\obj\Debug\ComplexRoot.exe
 C:\Users\M_User\Desktop\dev\ComplexRoot\ComplexRoot\obj\Debug\ComplexRoot.pdb
+C:\Users\sysoper\Desktop\dev\ComplexRoot\x64\Debug\ComplexRoot.exe.config
+C:\Users\sysoper\Desktop\dev\ComplexRoot\x64\Debug\ComplexRoot.exe
+C:\Users\sysoper\Desktop\dev\ComplexRoot\x64\Debug\ComplexRoot.pdb
+C:\Users\sysoper\Desktop\dev\ComplexRoot\ComplexRoot\obj\Debug\ComplexRoot.csprojAssemblyReference.cache
+C:\Users\sysoper\Desktop\dev\ComplexRoot\ComplexRoot\obj\Debug\ComplexRoot.AppView.resources
+C:\Users\sysoper\Desktop\dev\ComplexRoot\ComplexRoot\obj\Debug\ComplexRoot.Properties.Resources.resources
+C:\Users\sysoper\Desktop\dev\ComplexRoot\ComplexRoot\obj\Debug\ComplexRoot.csproj.GenerateResource.cache
+C:\Users\sysoper\Desktop\dev\ComplexRoot\ComplexRoot\obj\Debug\ComplexRoot.csproj.CoreCompileInputs.cache
+C:\Users\sysoper\Desktop\dev\ComplexRoot\ComplexRoot\obj\Debug\ComplexRoot.csproj.CopyComplete
+C:\Users\sysoper\Desktop\dev\ComplexRoot\ComplexRoot\obj\Debug\ComplexRoot.exe
+C:\Users\sysoper\Desktop\dev\ComplexRoot\ComplexRoot\obj\Debug\ComplexRoot.pdb

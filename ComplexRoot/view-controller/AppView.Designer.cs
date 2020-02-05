@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace ComplexRoot
@@ -34,16 +35,19 @@ namespace ComplexRoot
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.threadNumComboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.calculateBtn = new System.Windows.Forms.Button();
+            this.inputFileTextBox = new System.Windows.Forms.TextBox();
+            this.outputFileTextBox = new System.Windows.Forms.TextBox();
+            this.inputFileBtn = new System.Windows.Forms.Button();
+            this.outputFileBtn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.splitter1 = new System.Windows.Forms.Splitter();
+            this.asmRadioBtn = new System.Windows.Forms.RadioButton();
+            this.cppRadioBtn = new System.Windows.Forms.RadioButton();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -68,16 +72,16 @@ namespace ComplexRoot
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(12, 415);
+            this.progressBar1.Location = new System.Drawing.Point(12, 375);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(776, 23);
+            this.progressBar1.Size = new System.Drawing.Size(693, 23);
             this.progressBar1.TabIndex = 2;
             // 
-            // comboBox1
+            // threadNumComboBox
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.threadNumComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.threadNumComboBox.FormattingEnabled = true;
+            this.threadNumComboBox.Items.AddRange(new object[] {
             "1",
             "2",
             "3",
@@ -142,69 +146,69 @@ namespace ComplexRoot
             "62",
             "63",
             "64"});
-            this.comboBox1.Items.GetEnumerator().Reset();
-            this.comboBox1.Items.GetEnumerator().MoveNext();
-            this.comboBox1.Text = this.comboBox1.Items.GetEnumerator().Current.ToString();
-            this.comboBox1.Location = new System.Drawing.Point(20, 297);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(174, 21);
-            this.comboBox1.TabIndex = 3;
+            this.threadNumComboBox.Location = new System.Drawing.Point(590, 142);
+            this.threadNumComboBox.Name = "threadNumComboBox";
+            this.threadNumComboBox.Size = new System.Drawing.Size(115, 21);
+            this.threadNumComboBox.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(20, 269);
+            this.label3.Location = new System.Drawing.Point(587, 121);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(118, 16);
             this.label3.TabIndex = 4;
             this.label3.Text = "Number of threads";
             // 
-            // button1
+            // calculateBtn
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(618, 339);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(170, 45);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Calculate";
-            this.button1.UseVisualStyleBackColor = true;
+            this.calculateBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.calculateBtn.Location = new System.Drawing.Point(590, 310);
+            this.calculateBtn.Name = "calculateBtn";
+            this.calculateBtn.Size = new System.Drawing.Size(115, 45);
+            this.calculateBtn.TabIndex = 5;
+            this.calculateBtn.Text = "Calculate";
+            this.calculateBtn.UseVisualStyleBackColor = true;
+            this.calculateBtn.Click += new System.EventHandler(this.calculateBtn_Click);
             // 
-            // textBox1
+            // inputFileTextBox
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(19, 140);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(379, 22);
-            this.textBox1.TabIndex = 6;
+            this.inputFileTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputFileTextBox.Location = new System.Drawing.Point(19, 140);
+            this.inputFileTextBox.Name = "inputFileTextBox";
+            this.inputFileTextBox.Size = new System.Drawing.Size(447, 22);
+            this.inputFileTextBox.TabIndex = 6;
             // 
-            // textBox2
+            // outputFileTextBox
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(20, 213);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(378, 22);
-            this.textBox2.TabIndex = 7;
+            this.outputFileTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.outputFileTextBox.Location = new System.Drawing.Point(20, 213);
+            this.outputFileTextBox.Name = "outputFileTextBox";
+            this.outputFileTextBox.Size = new System.Drawing.Size(446, 22);
+            this.outputFileTextBox.TabIndex = 7;
             // 
-            // button2
+            // inputFileBtn
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(404, 133);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(79, 35);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Open...";
-            this.button2.UseVisualStyleBackColor = true;
+            this.inputFileBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.inputFileBtn.Location = new System.Drawing.Point(472, 137);
+            this.inputFileBtn.Name = "inputFileBtn";
+            this.inputFileBtn.Size = new System.Drawing.Size(79, 28);
+            this.inputFileBtn.TabIndex = 8;
+            this.inputFileBtn.Text = "Open...";
+            this.inputFileBtn.UseVisualStyleBackColor = true;
+            this.inputFileBtn.Click += new System.EventHandler(this.inputFileBtn_Click);
             // 
-            // button3
+            // outputFileBtn
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(404, 206);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(79, 35);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Open...";
-            this.button3.UseVisualStyleBackColor = true;
+            this.outputFileBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.outputFileBtn.Location = new System.Drawing.Point(472, 210);
+            this.outputFileBtn.Name = "outputFileBtn";
+            this.outputFileBtn.Size = new System.Drawing.Size(79, 29);
+            this.outputFileBtn.TabIndex = 9;
+            this.outputFileBtn.Text = "Open...";
+            this.outputFileBtn.UseVisualStyleBackColor = true;
+            this.outputFileBtn.Click += new System.EventHandler(this.outputFileBtn_Click);
             // 
             // label5
             // 
@@ -230,25 +234,60 @@ namespace ComplexRoot
             // 
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 450);
+            this.splitter1.Size = new System.Drawing.Size(3, 410);
             this.splitter1.TabIndex = 13;
             this.splitter1.TabStop = false;
+            // 
+            // radioButton1
+            // 
+            this.asmRadioBtn.AutoSize = true;
+            this.asmRadioBtn.Location = new System.Drawing.Point(588, 222);
+            this.asmRadioBtn.Name = "radioButton1";
+            this.asmRadioBtn.Size = new System.Drawing.Size(48, 17);
+            this.asmRadioBtn.TabIndex = 14;
+            this.asmRadioBtn.TabStop = true;
+            this.asmRadioBtn.Text = "ASM";
+            this.asmRadioBtn.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.cppRadioBtn.AutoSize = true;
+            this.cppRadioBtn.Location = new System.Drawing.Point(588, 245);
+            this.cppRadioBtn.Name = "radioButton2";
+            this.cppRadioBtn.Size = new System.Drawing.Size(46, 17);
+            this.cppRadioBtn.TabIndex = 15;
+            this.cppRadioBtn.TabStop = true;
+            this.cppRadioBtn.Text = "CPP";
+            this.cppRadioBtn.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label4.Location = new System.Drawing.Point(587, 194);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(124, 16);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Choose library type";
             // 
             // AppView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(724, 410);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.cppRadioBtn);
+            this.Controls.Add(this.asmRadioBtn);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.outputFileBtn);
+            this.Controls.Add(this.inputFileBtn);
+            this.Controls.Add(this.outputFileTextBox);
+            this.Controls.Add(this.inputFileTextBox);
+            this.Controls.Add(this.calculateBtn);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.threadNumComboBox);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -265,15 +304,18 @@ namespace ComplexRoot
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox threadNumComboBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private Button button2;
-        private Button button3;
+        private System.Windows.Forms.Button calculateBtn;
+        private TextBox inputFileTextBox;
+        private TextBox outputFileTextBox;
+        private Button inputFileBtn;
+        private Button outputFileBtn;
         private Label label5;
         private Label label6;
         private Splitter splitter1;
+        private RadioButton asmRadioBtn;
+        private RadioButton cppRadioBtn;
+        private Label label4;
     }
 }

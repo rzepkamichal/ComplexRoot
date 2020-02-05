@@ -18,18 +18,13 @@ namespace ComplexRoot
         static void Main()
         {
 
-            //string inputJson;
-            //inputJson = File.ReadAllText("input.json");
+
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new AppView());
 
-            //List<ComplexAlgebraic> inputs = JsonConvert.DeserializeObject<List<ComplexAlgebraic>>(inputJson);
-            //ResultsPresentation resultsPresentation = ComplexNumUtils.calculateRoots(inputs, 17);
-
-            //string resultsJson = JsonConvert.SerializeObject(resultsPresentation, Formatting.Indented);
-            //File.WriteAllText("output.json", resultsJson);
+            
 
 
             //Console.WriteLine(resultsPresentation.calculationDurationMS);
