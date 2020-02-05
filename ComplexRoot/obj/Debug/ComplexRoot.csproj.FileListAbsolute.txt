@@ -1,0 +1,11 @@
+C:\Users\M_User\Desktop\dev\ComplexRoot\x64\Debug\ComplexRoot.exe.config
+C:\Users\M_User\Desktop\dev\ComplexRoot\x64\Debug\ComplexRoot.exe
+C:\Users\M_User\Desktop\dev\ComplexRoot\x64\Debug\ComplexRoot.pdb
+C:\Users\M_User\Desktop\dev\ComplexRoot\ComplexRoot\obj\Debug\ComplexRoot.csprojAssemblyReference.cache
+C:\Users\M_User\Desktop\dev\ComplexRoot\ComplexRoot\obj\Debug\ComplexRoot.AppView.resources
+C:\Users\M_User\Desktop\dev\ComplexRoot\ComplexRoot\obj\Debug\ComplexRoot.Properties.Resources.resources
+C:\Users\M_User\Desktop\dev\ComplexRoot\ComplexRoot\obj\Debug\ComplexRoot.csproj.GenerateResource.cache
+C:\Users\M_User\Desktop\dev\ComplexRoot\ComplexRoot\obj\Debug\ComplexRoot.csproj.CoreCompileInputs.cache
+C:\Users\M_User\Desktop\dev\ComplexRoot\ComplexRoot\obj\Debug\ComplexRoot.csproj.CopyComplete
+C:\Users\M_User\Desktop\dev\ComplexRoot\ComplexRoot\obj\Debug\ComplexRoot.exe
+C:\Users\M_User\Desktop\dev\ComplexRoot\ComplexRoot\obj\Debug\ComplexRoot.pdb
