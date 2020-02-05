@@ -90,17 +90,12 @@ namespace ComplexRoot.complex_num
                             fixed (double* resultsPtr = &results[0])
                             {
                                 ComplexTrigonometric inputTrig = toTrygonometric(i);
-                                calculateRootsCpp(inputTrig.modulus, inputTrig.arc, inputTrig.root, resultsPtr);
+                                calculateRootsAsm(inputTrig.modulus, inputTrig.arc, inputTrig.root, resultsPtr);
                                 resultPresentation.input = i;
                                 for (int j = 0; j < i.root * 2 - 1; j += 2)
                                     resultPresentation.results.Add(new ComplexRootResult(resultsPtr[j], resultsPtr[j + 1]));
-
-
                                 
                                 job.resultPresenations.Add(resultPresentation);
-
-                               
-
                             }
                             
                         }

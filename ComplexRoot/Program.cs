@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
 namespace ComplexRoot
 {
@@ -20,17 +21,18 @@ namespace ComplexRoot
             string inputJson;
             inputJson = File.ReadAllText("input.json");
 
-            List<ComplexAlgebraic> inputs = JsonConvert.DeserializeObject<List<ComplexAlgebraic>>(inputJson);
-            ResultsPresentation resultsPresentation = ComplexNumUtils.calculateRoots(inputs, 5);
+            //Application.EnableVisualStyles();
+            //Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new AppView());
 
-            string resultsJson = JsonConvert.SerializeObject(resultsPresentation, Formatting.Indented);
-            File.WriteAllText("output.json", resultsJson);
+            List<ComplexAlgebraic> inputs = JsonConvert.DeserializeObject<List<ComplexAlgebraic>>(inputJson);
+            ResultsPresentation resultsPresentation = ComplexNumUtils.calculateRoots(inputs, 17);
+
+            //string resultsJson = JsonConvert.SerializeObject(resultsPresentation, Formatting.Indented);
+            //File.WriteAllText("output.json", resultsJson);
+
 
             Console.WriteLine(resultsPresentation.calculationDurationMS);
-
-            
-
-
         }
     }
 }

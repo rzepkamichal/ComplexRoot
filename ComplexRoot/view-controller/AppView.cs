@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace ComplexRoot
 {
-    public partial class Form1 : Form
+    public partial class AppView : Form
     {
-        public Form1()
+        public AppView()
         {
             InitializeComponent();
+        }
+
+        private void AppView_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
