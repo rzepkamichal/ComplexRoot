@@ -1,0 +1,9 @@
+﻿  Assembling complex_root.asm...
+  stdafx.cpp
+  ComplexRootLibAsm.cpp
+  dllmain.cpp
+     Creating library C:\Users\sysoper\Desktop\dev\ComplexRoot\x64\Release\ComplexRootLibAsm.lib and object C:\Users\sysoper\Desktop\dev\ComplexRoot\x64\Release\ComplexRootLibAsm.exp
+  Generating code
+  All 1 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  ComplexRootLibAsm.vcxproj -> C:\Users\sysoper\Desktop\dev\ComplexRoot\x64\Release\ComplexRootLibAsm.dll

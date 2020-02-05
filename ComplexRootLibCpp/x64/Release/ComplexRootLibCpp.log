@@ -1,0 +1,8 @@
+﻿  stdafx.cpp
+  ComplexRootLibCpp.cpp
+  dllmain.cpp
+     Creating library C:\Users\sysoper\Desktop\dev\ComplexRoot\x64\Release\ComplexRootLibCpp.lib and object C:\Users\sysoper\Desktop\dev\ComplexRoot\x64\Release\ComplexRootLibCpp.exp
+  Generating code
+  All 2 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  ComplexRootLibCpp.vcxproj -> C:\Users\sysoper\Desktop\dev\ComplexRoot\x64\Release\ComplexRootLibCpp.dll

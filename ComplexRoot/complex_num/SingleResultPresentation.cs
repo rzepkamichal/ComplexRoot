@@ -8,7 +8,7 @@ namespace ComplexRoot.complex_num
 {
     class SingleResultPresentation
     {
-        public ComplexNumAlgebraic input { get; set; }
+        public ComplexAlgebraic input { get; set; }
         public List<ComplexRootResult> results { get; set; }
 
         public SingleResultPresentation()

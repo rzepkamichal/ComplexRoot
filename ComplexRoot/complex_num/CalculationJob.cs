@@ -10,12 +10,12 @@ namespace ComplexRoot.complex_num
     class CalculationJob
     {
         public Thread thread { get; set; }
-        public List<ComplexNumTrygonometric> inputs { get; set; }
+        public List<ComplexAlgebraic> inputs { get; set; }
         public List<SingleResultPresentation> resultPresenations { get; set; }
 
         public CalculationJob()
         {
-            this.inputs = new List<ComplexNumTrygonometric>();
+            this.inputs = new List<ComplexAlgebraic>();
             this.resultPresenations = new List<SingleResultPresentation>();
         }
     }

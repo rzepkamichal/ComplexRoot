@@ -1,0 +1,12 @@
+C:\Users\sysoper\Desktop\dev\ComplexRoot\ComplexRoot\obj\Release\ComplexRoot.Properties.Resources.resources
+C:\Users\sysoper\Desktop\dev\ComplexRoot\ComplexRoot\obj\Release\ComplexRoot.csproj.GenerateResource.cache
+C:\Users\sysoper\Desktop\dev\ComplexRoot\ComplexRoot\obj\Release\ComplexRoot.csproj.CoreCompileInputs.cache
+C:\Users\sysoper\Desktop\dev\ComplexRoot\ComplexRoot\bin\Release\ComplexRoot.exe.config
+C:\Users\sysoper\Desktop\dev\ComplexRoot\ComplexRoot\bin\Release\ComplexRoot.exe
+C:\Users\sysoper\Desktop\dev\ComplexRoot\ComplexRoot\bin\Release\ComplexRoot.pdb
+C:\Users\sysoper\Desktop\dev\ComplexRoot\ComplexRoot\bin\Release\Newtonsoft.Json.dll
+C:\Users\sysoper\Desktop\dev\ComplexRoot\ComplexRoot\bin\Release\Newtonsoft.Json.xml
+C:\Users\sysoper\Desktop\dev\ComplexRoot\ComplexRoot\obj\Release\ComplexRoot.csprojAssemblyReference.cache
+C:\Users\sysoper\Desktop\dev\ComplexRoot\ComplexRoot\obj\Release\ComplexRoot.csproj.CopyComplete
+C:\Users\sysoper\Desktop\dev\ComplexRoot\ComplexRoot\obj\Release\ComplexRoot.exe
+C:\Users\sysoper\Desktop\dev\ComplexRoot\ComplexRoot\obj\Release\ComplexRoot.pdb

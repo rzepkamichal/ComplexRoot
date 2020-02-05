@@ -26,13 +26,15 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
+    <Optimize>false</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -52,8 +54,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="complex_num\CalculationJob.cs" />
-    <Compile Include="complex_num\ComplexNumAlgebraic.cs" />
-    <Compile Include="complex_num\ComplexNumTrygonometric.cs" />
+    <Compile Include="complex_num\ComplexAlgebraic.cs" />
+    <Compile Include="complex_num\ComplexTrigonometric.cs" />
     <Compile Include="complex_num\ComplexNumUtils.cs" />
     <Compile Include="complex_num\ComplexRootResult.cs" />
     <Compile Include="complex_num\SingleResultPresentation.cs" />
