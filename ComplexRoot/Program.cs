@@ -1,9 +1,4 @@
-﻿using ComplexRoot.complex_num;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Runtime.InteropServices;
+﻿using System;
 using System.Windows.Forms;
 
 namespace ComplexRoot
@@ -23,9 +18,6 @@ namespace ComplexRoot
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new AppView());
-
-            
-
 
             //Console.WriteLine(resultsPresentation.calculationDurationMS);
         }

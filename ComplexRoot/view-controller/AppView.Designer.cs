@@ -34,7 +34,6 @@ namespace ComplexRoot
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.threadNumComboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.calculateBtn = new System.Windows.Forms.Button();
@@ -48,6 +47,8 @@ namespace ComplexRoot
             this.asmRadioBtn = new System.Windows.Forms.RadioButton();
             this.cppRadioBtn = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
+            this.loggerTextBox = new System.Windows.Forms.RichTextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -69,13 +70,6 @@ namespace ComplexRoot
             this.label2.Size = new System.Drawing.Size(240, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Complex number roots calculator";
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(12, 375);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(693, 23);
-            this.progressBar1.TabIndex = 2;
             // 
             // threadNumComboBox
             // 
@@ -146,7 +140,7 @@ namespace ComplexRoot
             "62",
             "63",
             "64"});
-            this.threadNumComboBox.Location = new System.Drawing.Point(590, 142);
+            this.threadNumComboBox.Location = new System.Drawing.Point(590, 105);
             this.threadNumComboBox.Name = "threadNumComboBox";
             this.threadNumComboBox.Size = new System.Drawing.Size(115, 21);
             this.threadNumComboBox.TabIndex = 3;
@@ -155,7 +149,7 @@ namespace ComplexRoot
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(587, 121);
+            this.label3.Location = new System.Drawing.Point(587, 84);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(118, 16);
             this.label3.TabIndex = 4;
@@ -164,7 +158,7 @@ namespace ComplexRoot
             // calculateBtn
             // 
             this.calculateBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.calculateBtn.Location = new System.Drawing.Point(590, 310);
+            this.calculateBtn.Location = new System.Drawing.Point(590, 383);
             this.calculateBtn.Name = "calculateBtn";
             this.calculateBtn.Size = new System.Drawing.Size(115, 45);
             this.calculateBtn.TabIndex = 5;
@@ -175,7 +169,7 @@ namespace ComplexRoot
             // inputFileTextBox
             // 
             this.inputFileTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputFileTextBox.Location = new System.Drawing.Point(19, 140);
+            this.inputFileTextBox.Location = new System.Drawing.Point(19, 103);
             this.inputFileTextBox.Name = "inputFileTextBox";
             this.inputFileTextBox.Size = new System.Drawing.Size(447, 22);
             this.inputFileTextBox.TabIndex = 6;
@@ -183,7 +177,7 @@ namespace ComplexRoot
             // outputFileTextBox
             // 
             this.outputFileTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.outputFileTextBox.Location = new System.Drawing.Point(20, 213);
+            this.outputFileTextBox.Location = new System.Drawing.Point(20, 176);
             this.outputFileTextBox.Name = "outputFileTextBox";
             this.outputFileTextBox.Size = new System.Drawing.Size(446, 22);
             this.outputFileTextBox.TabIndex = 7;
@@ -191,7 +185,7 @@ namespace ComplexRoot
             // inputFileBtn
             // 
             this.inputFileBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.inputFileBtn.Location = new System.Drawing.Point(472, 137);
+            this.inputFileBtn.Location = new System.Drawing.Point(472, 100);
             this.inputFileBtn.Name = "inputFileBtn";
             this.inputFileBtn.Size = new System.Drawing.Size(79, 28);
             this.inputFileBtn.TabIndex = 8;
@@ -202,7 +196,7 @@ namespace ComplexRoot
             // outputFileBtn
             // 
             this.outputFileBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.outputFileBtn.Location = new System.Drawing.Point(472, 210);
+            this.outputFileBtn.Location = new System.Drawing.Point(472, 173);
             this.outputFileBtn.Name = "outputFileBtn";
             this.outputFileBtn.Size = new System.Drawing.Size(79, 29);
             this.outputFileBtn.TabIndex = 9;
@@ -214,7 +208,7 @@ namespace ComplexRoot
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(20, 121);
+            this.label5.Location = new System.Drawing.Point(20, 84);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(116, 16);
             this.label5.TabIndex = 11;
@@ -224,7 +218,7 @@ namespace ComplexRoot
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(20, 194);
+            this.label6.Location = new System.Drawing.Point(20, 157);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(124, 16);
             this.label6.TabIndex = 12;
@@ -234,26 +228,26 @@ namespace ComplexRoot
             // 
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 410);
+            this.splitter1.Size = new System.Drawing.Size(3, 440);
             this.splitter1.TabIndex = 13;
             this.splitter1.TabStop = false;
             // 
-            // radioButton1
+            // asmRadioBtn
             // 
             this.asmRadioBtn.AutoSize = true;
-            this.asmRadioBtn.Location = new System.Drawing.Point(588, 222);
-            this.asmRadioBtn.Name = "radioButton1";
+            this.asmRadioBtn.Location = new System.Drawing.Point(588, 185);
+            this.asmRadioBtn.Name = "asmRadioBtn";
             this.asmRadioBtn.Size = new System.Drawing.Size(48, 17);
             this.asmRadioBtn.TabIndex = 14;
             this.asmRadioBtn.TabStop = true;
             this.asmRadioBtn.Text = "ASM";
             this.asmRadioBtn.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // cppRadioBtn
             // 
             this.cppRadioBtn.AutoSize = true;
-            this.cppRadioBtn.Location = new System.Drawing.Point(588, 245);
-            this.cppRadioBtn.Name = "radioButton2";
+            this.cppRadioBtn.Location = new System.Drawing.Point(588, 208);
+            this.cppRadioBtn.Name = "cppRadioBtn";
             this.cppRadioBtn.Size = new System.Drawing.Size(46, 17);
             this.cppRadioBtn.TabIndex = 15;
             this.cppRadioBtn.TabStop = true;
@@ -264,17 +258,37 @@ namespace ComplexRoot
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(587, 194);
+            this.label4.Location = new System.Drawing.Point(587, 157);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(124, 16);
             this.label4.TabIndex = 16;
             this.label4.Text = "Choose library type";
             // 
+            // loggerTextBox
+            // 
+            this.loggerTextBox.Location = new System.Drawing.Point(19, 240);
+            this.loggerTextBox.Name = "loggerTextBox";
+            this.loggerTextBox.Size = new System.Drawing.Size(532, 193);
+            this.loggerTextBox.TabIndex = 17;
+            this.loggerTextBox.Text = "";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(20, 221);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(72, 16);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "Output Log";
+            // 
             // AppView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(724, 410);
+            this.ClientSize = new System.Drawing.Size(724, 440);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.loggerTextBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cppRadioBtn);
             this.Controls.Add(this.asmRadioBtn);
@@ -288,7 +302,6 @@ namespace ComplexRoot
             this.Controls.Add(this.calculateBtn);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.threadNumComboBox);
-            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "AppView";
@@ -303,7 +316,6 @@ namespace ComplexRoot
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.ComboBox threadNumComboBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button calculateBtn;
@@ -317,5 +329,7 @@ namespace ComplexRoot
         private RadioButton asmRadioBtn;
         private RadioButton cppRadioBtn;
         private Label label4;
+        private RichTextBox loggerTextBox;
+        private Label label7;
     }
 }

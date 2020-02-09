@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ComplexRoot.complex_num
 {
@@ -24,6 +23,15 @@ namespace ComplexRoot.complex_num
 
         [DllImport("ComplexRootLibAsm.dll", CallingConvention = CallingConvention.StdCall)]
         public unsafe static extern void calculateRootsAsm(double modulus, double arc, int n, double* results);
+
+        [DllImport("kernel32", SetLastError = true)]
+        private static extern IntPtr LoadLibrary(string lpFileName);
+
+        public static bool areLibrariesPresent()
+        {
+            return LoadLibrary("ComplexRootLibCpp.dll") != IntPtr.Zero
+                && LoadLibrary("ComplexRootLibAsm.dll") != IntPtr.Zero;
+        }
 
         public static ComplexTrigonometric toTrygonometric(ComplexAlgebraic algebraic)
         {
@@ -56,23 +64,20 @@ namespace ComplexRoot.complex_num
         }
 
 
-        public static ResultsPresentation calculateRoots(List<ComplexAlgebraic> inputs, int threadCount, LibraryType lib)
+        public static ResultsPresentation calculateRoots(List<ComplexAlgebraic> inputs, int threadCount, LibraryType lib, RichTextBox loggerTextBox)
         {
             if (threadCount < 1 || threadCount > 64)
                 threadCount = 1;
 
-            List<CalculationJob> jobs = new List<CalculationJob>();
-
             //create empty jobs
+            List<CalculationJob> jobs = new List<CalculationJob>();
             for (int i = 0; i < threadCount; i++)
             {
                 CalculationJob job = new CalculationJob();
                 jobs.Add(job);
             }
 
-            
-
-            //assign possibly equal portions of inputs to every job
+            //assign possibly equal portions of inputs to each job
             int jobIndex = 0;
             for (int i = 0; i < inputs.Count; i++)
             {
@@ -81,7 +86,8 @@ namespace ComplexRoot.complex_num
                 jobIndex %= threadCount;
             }
 
-            //define tasks for threands
+
+            //define tasks for each thread
             jobs.ForEach(job =>
             {
                 job.thread = new Thread(() =>
@@ -90,25 +96,30 @@ namespace ComplexRoot.complex_num
                     {
                         unsafe
                         {
-                           
                             SingleResultPresentation resultPresentation = new SingleResultPresentation();
 
-                            double[] results = new double[100];
+                            double[] results = new double[i.root * 2];
                             fixed (double* resultsPtr = &results[0])
                             {
                                 ComplexTrigonometric inputTrig = toTrygonometric(i);
 
-                                if(LibraryType.ASM.Equals(lib))
+                                //perform calculation
+                                if (LibraryType.ASM.Equals(lib))
                                     calculateRootsAsm(inputTrig.modulus, inputTrig.arc, inputTrig.root, resultsPtr);
                                 else
                                     calculateRootsCpp(inputTrig.modulus, inputTrig.arc, inputTrig.root, resultsPtr);
+
+                                //convert results and add to the job's resultlist
                                 resultPresentation.input = i;
                                 for (int j = 0; j < i.root * 2 - 1; j += 2)
-                                    resultPresentation.results.Add(new ComplexRootResult(resultsPtr[j], resultsPtr[j + 1]));
-                                
+                                    resultPresentation.results.Add(new ComplexRootResult(
+                                        Math.Round(resultsPtr[j], 6),
+                                        Math.Round(resultsPtr[j + 1], 6)));
+
                                 job.resultPresenations.Add(resultPresentation);
+
                             }
-                            
+
                         }
 
                     });
@@ -116,6 +127,10 @@ namespace ComplexRoot.complex_num
                 });
             });
 
+            loggerTextBox.AppendText("Worker threads have benn initialized.\n");
+            loggerTextBox.AppendText("Pleas wait... Results are beeing calculated...\n");
+
+            //start calculation timer
             Stopwatch calculationTimeWatch = new Stopwatch();
             calculationTimeWatch.Start();
 
@@ -128,6 +143,9 @@ namespace ComplexRoot.complex_num
             //get calculation time
             calculationTimeWatch.Stop();
             double calculationDurationMS = ((double)calculationTimeWatch.ElapsedTicks) / (Stopwatch.Frequency) * 1000;
+
+            loggerTextBox.AppendText("Results have been calculated successfully.\n");
+            loggerTextBox.AppendText("Calculation duration (ms): " + calculationDurationMS + "\n");
 
             //join results to one list      
             List<SingleResultPresentation> resultPresentations = new List<SingleResultPresentation>();
