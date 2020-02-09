@@ -25,9 +25,9 @@ namespace ComplexRoot.complex_num
         /// <summary>
         /// The root to be calculated
         /// </summary>
-        public int root { get; set; }
+        public ushort root { get; set; }
 
-        public ComplexTrigonometric(double modulus, double arc, int root)
+        public ComplexTrigonometric(double modulus, double arc, ushort root)
         {
             this.modulus = modulus;
             this.arc = arc;

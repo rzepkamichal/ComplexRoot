@@ -3,14 +3,12 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace ComplexRoot
 {
     public partial class AppView : Form
     {
-
 
         public AppView()
         {
@@ -138,7 +136,13 @@ namespace ComplexRoot
                 resetCalculationEvent(btn);
                 return;
             }
-            catch (Newtonsoft.Json.JsonReaderException)
+            catch (Newtonsoft.Json.JsonReaderException )
+            {
+                alertInvalidJSON();
+                resetCalculationEvent(btn);
+                return;
+            }
+            catch (Newtonsoft.Json.JsonSerializationException)
             {
                 alertInvalidJSON();
                 resetCalculationEvent(btn);

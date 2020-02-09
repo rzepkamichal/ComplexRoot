@@ -19,9 +19,9 @@
         /// <summary>
         /// Root to be calculated
         /// </summary>
-        public int root { get; set; }
+        public ushort root { get; set; }
 
-        public ComplexAlgebraic(double re, double im, int root)
+        public ComplexAlgebraic(double re, double im, ushort root)
         {
             this.re = re;
             this.im = im;
