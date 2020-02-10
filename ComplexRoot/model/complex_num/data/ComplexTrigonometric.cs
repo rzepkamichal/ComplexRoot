@@ -1,32 +1,31 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ComplexRoot.complex_num
+﻿namespace ComplexRoot.complex_num
 {
     /// <summary>
-    /// Trygonometric representation of a complex number
+    /// Trygonometric representation of a complex number.
     /// </summary>
     class ComplexTrigonometric
     {
         /// <summary>
-        /// Modulus of the complex number
+        /// Modulus of the complex number.
         /// </summary>
         public double modulus { get; set; }
 
         /// <summary>
-        /// Arc of the complex number
+        /// Argument of the complex number
         /// </summary>
         public double arc { get; set; }
 
         /// <summary>
-        /// The root to be calculated
+        /// The root to be calculated.
         /// </summary>
         public ushort root { get; set; }
 
+        /// <summary>
+        /// Parametric constructor.
+        /// </summary>
+        /// <param name="modulus">Modulus of the trigonometric representation.</param>
+        /// <param name="arc">Argument of the trigonometric representation.</param>
+        /// <param name="root">Root to be calculated.</param>
         public ComplexTrigonometric(double modulus, double arc, ushort root)
         {
             this.modulus = modulus;

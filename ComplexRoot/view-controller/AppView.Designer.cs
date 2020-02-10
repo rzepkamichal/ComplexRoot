@@ -1,9 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace ComplexRoot
 {
+    /// <summary>
+    /// View of the app.
+    /// </summary>
     partial class AppView
     {
         /// <summary>
@@ -32,49 +33,50 @@ namespace ComplexRoot
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.appTitle = new System.Windows.Forms.Label();
+            this.appSubTitle = new System.Windows.Forms.Label();
             this.threadNumComboBox = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.threadSelectLabel = new System.Windows.Forms.Label();
             this.calculateBtn = new System.Windows.Forms.Button();
             this.inputFileTextBox = new System.Windows.Forms.TextBox();
             this.outputFileTextBox = new System.Windows.Forms.TextBox();
             this.inputFileBtn = new System.Windows.Forms.Button();
             this.outputFileBtn = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.inputBoxLabel = new System.Windows.Forms.Label();
+            this.outputBoxLabel = new System.Windows.Forms.Label();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.asmRadioBtn = new System.Windows.Forms.RadioButton();
             this.cppRadioBtn = new System.Windows.Forms.RadioButton();
-            this.label4 = new System.Windows.Forms.Label();
+            this.librarySelectLabel = new System.Windows.Forms.Label();
             this.loggerTextBox = new System.Windows.Forms.RichTextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.consoleLogLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
+            // appTitle
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(244, 42);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ComplexRoot";
+            this.appTitle.AutoSize = true;
+            this.appTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.appTitle.Location = new System.Drawing.Point(12, 9);
+            this.appTitle.Name = "appTitle";
+            this.appTitle.Size = new System.Drawing.Size(244, 42);
+            this.appTitle.TabIndex = 0;
+            this.appTitle.Text = "ComplexRoot";
             // 
-            // label2
+            // appSubTitle
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(16, 51);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(240, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Complex number roots calculator";
+            this.appSubTitle.AutoSize = true;
+            this.appSubTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.appSubTitle.Location = new System.Drawing.Point(16, 51);
+            this.appSubTitle.Name = "appSubTitle";
+            this.appSubTitle.Size = new System.Drawing.Size(240, 20);
+            this.appSubTitle.TabIndex = 1;
+            this.appSubTitle.Text = "Complex number roots calculator";
             // 
             // threadNumComboBox
             // 
             this.threadNumComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.threadNumComboBox.FormattingEnabled = true;
+            //set default options to 1-64
             this.threadNumComboBox.Items.AddRange(new object[] {
             "1",
             "2",
@@ -145,15 +147,15 @@ namespace ComplexRoot
             this.threadNumComboBox.Size = new System.Drawing.Size(115, 21);
             this.threadNumComboBox.TabIndex = 3;
             // 
-            // label3
+            // threadSelectLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(587, 84);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(118, 16);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Number of threads";
+            this.threadSelectLabel.AutoSize = true;
+            this.threadSelectLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.threadSelectLabel.Location = new System.Drawing.Point(587, 84);
+            this.threadSelectLabel.Name = "threadSelectLabel";
+            this.threadSelectLabel.Size = new System.Drawing.Size(118, 16);
+            this.threadSelectLabel.TabIndex = 4;
+            this.threadSelectLabel.Text = "Number of threads";
             // 
             // calculateBtn
             // 
@@ -204,25 +206,25 @@ namespace ComplexRoot
             this.outputFileBtn.UseVisualStyleBackColor = true;
             this.outputFileBtn.Click += new System.EventHandler(this.outputFileBtn_Click);
             // 
-            // label5
+            // inputBoxLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(20, 84);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(116, 16);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Select JSON input";
+            this.inputBoxLabel.AutoSize = true;
+            this.inputBoxLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputBoxLabel.Location = new System.Drawing.Point(20, 84);
+            this.inputBoxLabel.Name = "inputBoxLabel";
+            this.inputBoxLabel.Size = new System.Drawing.Size(116, 16);
+            this.inputBoxLabel.TabIndex = 11;
+            this.inputBoxLabel.Text = "Select JSON input";
             // 
-            // label6
+            // outputBoxLabel
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(20, 157);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(124, 16);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Select JSON output";
+            this.outputBoxLabel.AutoSize = true;
+            this.outputBoxLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.outputBoxLabel.Location = new System.Drawing.Point(20, 157);
+            this.outputBoxLabel.Name = "outputBoxLabel";
+            this.outputBoxLabel.Size = new System.Drawing.Size(124, 16);
+            this.outputBoxLabel.TabIndex = 12;
+            this.outputBoxLabel.Text = "Select JSON output";
             // 
             // splitter1
             // 
@@ -254,15 +256,15 @@ namespace ComplexRoot
             this.cppRadioBtn.Text = "CPP";
             this.cppRadioBtn.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // librarySelectLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(587, 157);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(124, 16);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "Choose library type";
+            this.librarySelectLabel.AutoSize = true;
+            this.librarySelectLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.librarySelectLabel.Location = new System.Drawing.Point(587, 157);
+            this.librarySelectLabel.Name = "librarySelectLabel";
+            this.librarySelectLabel.Size = new System.Drawing.Size(124, 16);
+            this.librarySelectLabel.TabIndex = 16;
+            this.librarySelectLabel.Text = "Choose library type";
             // 
             // loggerTextBox
             // 
@@ -272,38 +274,38 @@ namespace ComplexRoot
             this.loggerTextBox.TabIndex = 17;
             this.loggerTextBox.Text = "";
             // 
-            // label7
+            // consoleLogLabel
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(20, 221);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(72, 16);
-            this.label7.TabIndex = 18;
-            this.label7.Text = "Output Log";
+            this.consoleLogLabel.AutoSize = true;
+            this.consoleLogLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.consoleLogLabel.Location = new System.Drawing.Point(20, 221);
+            this.consoleLogLabel.Name = "consoleLogLabel";
+            this.consoleLogLabel.Size = new System.Drawing.Size(72, 16);
+            this.consoleLogLabel.TabIndex = 18;
+            this.consoleLogLabel.Text = "Output Log";
             // 
             // AppView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(724, 440);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.consoleLogLabel);
             this.Controls.Add(this.loggerTextBox);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.librarySelectLabel);
             this.Controls.Add(this.cppRadioBtn);
             this.Controls.Add(this.asmRadioBtn);
             this.Controls.Add(this.splitter1);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.outputBoxLabel);
+            this.Controls.Add(this.inputBoxLabel);
             this.Controls.Add(this.outputFileBtn);
             this.Controls.Add(this.inputFileBtn);
             this.Controls.Add(this.outputFileTextBox);
             this.Controls.Add(this.inputFileTextBox);
             this.Controls.Add(this.calculateBtn);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.threadSelectLabel);
             this.Controls.Add(this.threadNumComboBox);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.appSubTitle);
+            this.Controls.Add(this.appTitle);
             this.Name = "AppView";
             this.Text = "ComplexRoot by Michal Rzepka 2019";
             this.Load += new System.EventHandler(this.AppView_Load);
@@ -314,22 +316,22 @@ namespace ComplexRoot
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label appTitle;
+        private System.Windows.Forms.Label appSubTitle;
         private System.Windows.Forms.ComboBox threadNumComboBox;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label threadSelectLabel;
         private System.Windows.Forms.Button calculateBtn;
         private TextBox inputFileTextBox;
         private TextBox outputFileTextBox;
         private Button inputFileBtn;
         private Button outputFileBtn;
-        private Label label5;
-        private Label label6;
+        private Label inputBoxLabel;
+        private Label outputBoxLabel;
         private Splitter splitter1;
         private RadioButton asmRadioBtn;
         private RadioButton cppRadioBtn;
-        private Label label4;
+        private Label librarySelectLabel;
         private RichTextBox loggerTextBox;
-        private Label label7;
+        private Label consoleLogLabel;
     }
 }

@@ -3,7 +3,6 @@ using System.Windows.Forms;
 
 namespace ComplexRoot
 {
-
     static class Program
     {
         /// <summary>
@@ -12,14 +11,10 @@ namespace ComplexRoot
         [STAThread]
         static void Main()
         {
-
-
-
+            //run the view
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new AppView());
-
-            //Console.WriteLine(resultsPresentation.calculationDurationMS);
         }
     }
 }
