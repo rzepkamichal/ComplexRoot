@@ -10,3 +10,4 @@ C:\Users\sysoper\Desktop\dev\ComplexRoot\ComplexRoot\obj\Release\ComplexRoot.csp
 C:\Users\sysoper\Desktop\dev\ComplexRoot\ComplexRoot\obj\Release\ComplexRoot.csproj.CopyComplete
 C:\Users\sysoper\Desktop\dev\ComplexRoot\ComplexRoot\obj\Release\ComplexRoot.exe
 C:\Users\sysoper\Desktop\dev\ComplexRoot\ComplexRoot\obj\Release\ComplexRoot.pdb
+C:\Users\sysoper\Desktop\dev\ComplexRoot\ComplexRoot\obj\Release\ComplexRoot.AppView.resources

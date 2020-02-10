@@ -1,3 +1,22 @@
+;Autor: Micha³ Rzepka
+;Rodzaj studiów: SSI
+;Kierunek: Informatyka
+;Semestr: 5
+;Grupa dziekañska: 1
+;Sekcja lab: 2
+;Przedmiot: Jêzyki Asemblerowe
+;Email: michrze558@student.polsl.pl
+;Temat projektu: Wyznaczanie pierwiastków liczb zespolonych
+;Data oddania projektu: 10-02-2020
+
+;CHANGELOG
+;13-11-2019 init project
+;07-01-2020 add asm library calling
+;28-01-2020 add asm n-th real root calculation
+;02-02-2020 complete asm library implementation
+;03-02-2020 refactor asm library
+;05-02-2020 fix asm multithreading bug (replace .data section with stack usage)
+;10-02-2020 add documentation
 
 .data
 	pi dq 400921FB54442D18h		;most accurate PI approximation in double precision

@@ -1,4 +1,24 @@
-﻿using System;
+﻿/*
+Autor: Michał Rzepka
+Rodzaj studiów: SSI
+Kierunek: Informatyka
+Semestr: 5
+Grupa dziekańska: 1
+Sekcja lab: 2
+Przedmiot: Języki Asemblerowe
+Email: michrze558@student.polsl.pl
+Temat projektu: Wyznaczanie pierwiastków liczb zespolonych
+Data oddania projektu: 10-02-2020
+*/
+
+/* CHANGELOG
+ * 04-02-2020 create model
+ * 04-02-2020 add thread support
+ * 05-02-2020 fix asm multithreading bug (replace .data section with stack usage)
+ * 10-02-2020 rework to put result list in the same order as the input list
+ * 10-02-2020 add documentation
+ */
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;

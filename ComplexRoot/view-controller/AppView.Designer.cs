@@ -1,5 +1,22 @@
-﻿using System.Windows.Forms;
+﻿/*
+Autor: Michał Rzepka
+Rodzaj studiów: SSI
+Kierunek: Informatyka
+Semestr: 5
+Grupa dziekańska: 1
+Sekcja lab: 2
+Przedmiot: Języki Asemblerowe
+Email: michrze558@student.polsl.pl
+Temat projektu: Wyznaczanie pierwiastków liczb zespolonych
+Data oddania projektu: 10-02-2020
+*/
 
+/* CHANGELOG
+ * 05-02-2020 create GUI dialog
+ * 05-02-2020 add dialog control listeners
+ * 10-02-2020 add documentation
+ */
+using System.Windows.Forms;
 namespace ComplexRoot
 {
     /// <summary>
