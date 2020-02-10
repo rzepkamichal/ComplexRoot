@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -71,20 +72,33 @@ namespace ComplexRoot.complex_num
 
             //create empty jobs
             List<CalculationJob> jobs = new List<CalculationJob>();
+            long inputsPerJob = inputs.LongCount() / threadCount;
+            int remainingInputs = (int) inputs.LongCount() % threadCount;
+            IEnumerator inputsEnumerator = inputs.GetEnumerator();
+            
             for (int i = 0; i < threadCount; i++)
             {
                 CalculationJob job = new CalculationJob();
                 jobs.Add(job);
+
+                if (i == threadCount - 1)
+                {
+                    while (inputsEnumerator.MoveNext())
+                    {
+                        jobs.Last().inputs.Add((ComplexAlgebraic)inputsEnumerator.Current);
+                    }
+
+                }
+
+                for (long j = 0; j < inputsPerJob && inputsEnumerator.MoveNext(); j++)
+                {
+                    jobs.ElementAt(i).inputs.Add((ComplexAlgebraic)inputsEnumerator.Current);
+                }
+
+                
             }
 
-            //assign possibly equal portions of inputs to each job
-            int jobIndex = 0;
-            for (int i = 0; i < inputs.Count; i++)
-            {
-                jobs.ElementAt(jobIndex).inputs.Add(inputs.ElementAt(i));
-                jobIndex++;
-                jobIndex %= threadCount;
-            }
+           
 
 
             //define tasks for each thread
